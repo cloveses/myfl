@@ -13,6 +13,10 @@
         .pure-u-1 p  button{text-align: left;}
         p.stem {text-align: left;}
     </style>
+</head>
+<body>
+<div class="pure-g">
+    {% if exam[0] == 'select' %}
     <script type="text/javascript">
         $(function () {
             $("#keya").click(function(){
@@ -26,32 +30,29 @@
             });
         })
     </script>
-</head>
-<body>
-<div class="pure-g">
     <div class="pure-u-1">
     <p class="stem">
-    Jinja2 uses a central object called the template Environment. Instances of this class are used to store the configuration and global objects, and are used to load templates from the file system or other locations. 
+    {{ exam[1] }}
     </p>
     </div>
     <div class="pure-u-1">
         <p>
         <button id="keya">
-            A The simplest way to configure Jinja2 to load templates for your application looks roughly like this:
+            {{exam[2]}}
         </button>
         </p>
     </div>
     <div class="pure-u-1">
     <p>
         <button id="keyb">
-            B A The simplest way to configure Jinja2 to load templates for your application looks roughly like this:
+            {{exam[3]}}
         </button>
     </p>
     </div>
     <div class="pure-u-1">
     <p>
         <button id="keyc">
-        C A The simplest way to configure Jinja2 to load templates for your application looks roughly like this:
+        {{exam[4]}}
         </button>
     </p>
     </div>
@@ -59,14 +60,56 @@
     <p>
         <form action="/hc">
         <input type="hidden" id="key" name="key" value=""/>
-        <input type="hidden" id="seq" name="seq" value="2" />
-        <input type="hidden" id="mytype" name="mytype" value="select" />
+        <input type="hidden" id="rkey" name="rkey" value="{{exam[6]}}"/>
         <button type="submit">
             submit
         </button>
         </form>
     </p>
     </div>
+    {% else %}
+    <script type="text/javascript">
+        $(function () {
+            $("#keya").click(function(){
+                $("#key").val('Y');
+            });
+            $("#keyb").click(function(){
+                $("#key").val('N');
+            });
+        })
+    </script>
+    <div class="pure-u-1">
+    <p class="stem">
+    {{ exam[1] }}
+    </p>
+    </div>
+    <div class="pure-u-1">
+        <p>
+        <button id="keya">
+            正确
+        </button>
+        </p>
+    </div>
+    <div class="pure-u-1">
+    <p>
+        <button id="keyb">
+            错误
+        </button>
+    </p>
+    </div>
+    <div class="pure-u-1">
+    <p>
+        <form action="/hc">
+        <input type="hidden" id="key" name="key" value=""/>
+        <input type="hidden" id="rkey" name="rkey" value="{{exam[2]}}"/>
+        <button type="submit">
+            submit
+        </button>
+        </form>
+    </p>
+    </div>
+
+    {%endif%}
 </div>
 </body>
 </html>
