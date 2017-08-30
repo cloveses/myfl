@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/pure-min.css" />
+<script type="text/javascript" src="/static/jquery-3.2.1.min.js"></script>
+    <title></title>
+    <style type="text/css">
+        div.pure-g {margin: 20 50px;padding: 0 20px;text-align: center;}
+        div.pure-u* {margin: 30px 0;}
+        .pure-u-1 p  button{text-align: left;}
+        p.stem {text-align: left;}
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#keya").click(function(){
+                $("#key").val('A');
+            });
+            $("#keyb").click(function(){
+                $("#key").val('B');
+            });
+            $("#keyc").click(function(){
+                $("#key").val('C');
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="pure-g">
+    <div class="pure-u-1">
+    <p class="stem">
+    Jinja2 uses a central object called the template Environment. Instances of this class are used to store the configuration and global objects, and are used to load templates from the file system or other locations. 
+    </p>
+    </div>
+    <div class="pure-u-1">
+        <p>
+        <button id="keya">
+            A The simplest way to configure Jinja2 to load templates for your application looks roughly like this:
+        </button>
+        </p>
+    </div>
+    <div class="pure-u-1">
+    <p>
+        <button id="keyb">
+            B A The simplest way to configure Jinja2 to load templates for your application looks roughly like this:
+        </button>
+    </p>
+    </div>
+    <div class="pure-u-1">
+    <p>
+        <button id="keyc">
+        C A The simplest way to configure Jinja2 to load templates for your application looks roughly like this:
+        </button>
+    </p>
+    </div>
+    <div class="pure-u-1">
+    <p>
+        <form action="/hc">
+        <input type="hidden" id="key" name="key" value=""/>
+        <input type="hidden" id="seq" name="seq" value="2" />
+        <input type="hidden" id="mytype" name="mytype" value="select" />
+        <button type="submit">
+            submit
+        </button>
+        </form>
+    </p>
+    </div>
+</div>
+</body>
+</html>
